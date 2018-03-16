@@ -1,14 +1,15 @@
 import { Calculator } from './calculator.js';
+import './styles.css';
 
 $(document).ready(function(){
   $("#birthday-form").submit(function(event) {
     event.preventDefault();
+    $("p").remove();
     let person = new Calculator($("#name").val(), $("#birthday").val(), $("#gender").val());
     person.convertToSeconds();
-    $("#results").append("<p>Your age on Earth would be " + Number((person.planetAgeConvert("earth")).toFixed(1)) + ". " + person.lifeExpectancy("earth") + "</p>");
-    $("#results").append("<p>Your age on Mercury would be " + Number((person.planetAgeConvert("mercury")).toFixed(1)) + ". " + person.lifeExpectancy("mercury") + "</p>");
-    $("#results").append("<p>Your age on Venus would be " + Number((person.planetAgeConvert("venus")).toFixed(1)) + ". " + person.lifeExpectancy("venus") + "</p>");
-    $("#results").append("<p>Your age on Mars would be " + Number((person.planetAgeConvert("mars")).toFixed(1)) + ". " + person.lifeExpectancy("mars") + "</p>");
-    $("#results").append("<p>Your age on Jupiter would be " + Number((person.planetAgeConvert("jupiter")).toFixed(1)) + ". " + person.lifeExpectancy("jupiter") + "</p>");
+    let planets = ["earth", "mercury", "venus", "mars", "jupiter"];
+    planets.forEach(function(planet) {
+      $("#results").append("<p>Your age on " + planet[0].toUpperCase() + planet.slice(1) + " would be " + Number((person.planetAgeConvert(planet)).toFixed(1)) + ". " + person.lifeExpectancy(planet) + "</p>");
+    });
   });
 });
