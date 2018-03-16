@@ -15,10 +15,13 @@ export class Calculator {
   }
 
   mercuryConvert() {
-    this.convertToSeconds();
     let age = this.compareDates();
     return (age / 60 / 60 / 24 / (365 * .24));
+  }
 
+  venusConvert() {
+    let age = this.compareDates();
+    return (age / 60 / 60 / 24 / (365 * .62));
   }
 
 
