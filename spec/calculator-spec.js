@@ -35,4 +35,10 @@ describe('Calculator', function() {
     let result = age / 60 / 60 / 24 / (365 * .62);
     expect(calc.venusConvert()).toEqual(result);
   });
+
+  it('returns the users age in mars years', function() {
+    let age = calc.compareDates();
+    let result = age / 60 / 60 / 24 / (365 * 1.88);
+    expect(calc.marsConvert()).toEqual(result);
+  });
 });

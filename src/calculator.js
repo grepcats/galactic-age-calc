@@ -24,5 +24,10 @@ export class Calculator {
     return (age / 60 / 60 / 24 / (365 * .62));
   }
 
+  marsConvert() {
+    let age = this.compareDates();
+    return (age / 60 / 60 / 24 / (365 * 1.88));
+  }
+
 
 }
