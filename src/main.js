@@ -10,6 +10,6 @@ $(document).ready(function(){
     $("#results").append("<p>Your age on Venus would be " + Number((person.venusConvert()).toFixed(1)) + ". " + person.lifeExpectancy("venus") + "</p>");
     $("#results").append("<p>Your age on Mars would be " + Number((person.marsConvert()).toFixed(1)) + ". " + person.lifeExpectancy("mars") + "</p>");
     $("#results").append("<p>Your age on Jupiter would be " + Number((person.jupiterConvert()).toFixed(1)) + ". " + person.lifeExpectancy("jupiter") + "</p>");
-
+    debugger
   });
 });

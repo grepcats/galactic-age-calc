@@ -2,6 +2,7 @@ import { Calculator } from '../src/calculator.js';
 
 describe('Calculator', function() {
   let calc;
+  const yearCalc = 86400;
 
   beforeEach(function() {
     calc = new Calculator("Ben", "4/19/1986", "male");
@@ -26,37 +27,37 @@ describe('Calculator', function() {
 
   it('returns the users age in mercury years', function() {
     let age = calc.compareDates();
-    let result = age / 60 / 60 / 24 / (365 * .24);
+    let result = age / yearCalc / (365 * .24);
     expect(calc.mercuryConvert()).toEqual(result);
   });
 
   it('returns the users age in earth years', function() {
     let age = calc.compareDates();
-    let result = age / 60 / 60 / 24 / 365;
+    let result = age / yearCalc / 365;
     expect(calc.earthConvert()).toEqual(result);
   });
 
   it('returns the users age in venus years', function() {
     let age = calc.compareDates();
-    let result = age / 60 / 60 / 24 / (365 * .62);
+    let result = age / yearCalc / (365 * .62);
     expect(calc.venusConvert()).toEqual(result);
   });
 
   it('returns the users age in mars years', function() {
     let age = calc.compareDates();
-    let result = age / 60 / 60 / 24 / (365 * 1.88);
+    let result = age / yearCalc / (365 * 1.88);
     expect(calc.marsConvert()).toEqual(result);
   });
 
   it('returns the users age in jupiter years', function() {
     let age = calc.compareDates();
-    let result = age / 60 / 60 / 24 / (365 * 11.86);
+    let result = age / yearCalc / (365 * 11.86);
     expect(calc.jupiterConvert()).toEqual(result);
   });
 
   it('provides life expectancy for user given planet', function() {
     let venusExpectancy = 76.3 / .62
-    let result = "Your life expectancy is " + venusExpectancy - calc.venusConvert() + " more years.";
+    let result = "Your life expectancy is " + Number(venusExpectancy - calc.venusConvert()).toFixed(1) + " more years.";
     expect(calc.lifeExpectancy("venus")).toEqual(result);
   });
 
@@ -65,8 +66,7 @@ describe('Calculator', function() {
     older.convertToSeconds();
     let venusExpectancy = 76.3 / .62
     let venusAge = older.venusConvert();
-    let result = "You've outlived your life expectancy by " + venusAge - venusExpectancy + " years.";
-
+    let result = "You've outlived your life expectancy by " + Number(venusAge - venusExpectancy).toFixed(1) + " years.";
     expect(older.lifeExpectancy("venus")).toEqual(result);
   });
 

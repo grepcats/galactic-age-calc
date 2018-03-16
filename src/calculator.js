@@ -1,9 +1,7 @@
 const earth = 365;
+const yearCalc = 86400;
 
 export class Calculator {
-
-  // const age = this.compareDates();
-
   constructor(name, birthday, gender) {
     this.name = name;
     this.birthday = birthday;
@@ -22,27 +20,27 @@ export class Calculator {
 
   earthConvert() {
     let age = this.compareDates();
-    return (age / 60 / 60 / 24 / earth);
+    return (age / yearCalc / earth);
   }
 
   mercuryConvert() {
     let age = this.compareDates();
-    return (age / 60 / 60 / 24 / (earth * .24));
+    return (age / yearCalc / (earth * .24));
   }
 
   venusConvert() {
     let age = this.compareDates();
-    return (age / 60 / 60 / 24 / (earth * .62));
+    return (age / yearCalc / (earth * .62));
   }
 
   marsConvert() {
     let age = this.compareDates();
-    return (age / 60 / 60 / 24 / (earth * 1.88));
+    return (age / yearCalc / (earth * 1.88));
   }
 
   jupiterConvert() {
     let age = this.compareDates();
-    return (age / 60 / 60 / 24 / (earth * 11.86));
+    return (age / 86400 / (earth * 11.86));
   }
 
   lifeExpectancy(planet) {
