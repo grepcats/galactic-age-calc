@@ -10,7 +10,7 @@ export class Calculator {
   }
 
   convertToSeconds() {
-    this.convertedBirthday = Date.parse(this.birthday) / 1000;
+    this.convertedBirthday = Date.parse(new Date(this.birthday.replace(/-/g, '/'))) / 1000;
   }
 
   compareDates() {

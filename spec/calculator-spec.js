@@ -11,6 +11,7 @@ describe('Calculator', function() {
 
   it('creates a calculator object with the users name and birthday', function() {
     expect(calc.name).toEqual("Ben");
+    expect(calc.gender).toEqual("male");
     expect(calc.birthday).toEqual("4/19/1986");
   });
 
@@ -55,10 +56,34 @@ describe('Calculator', function() {
     expect(calc.planetAgeConvert("jupiter")).toEqual(result);
   });
 
-  it('provides life expectancy for user given planet', function() {
-    let venusExpectancy = 76.3 / .62
-    let result = "Your life expectancy is " + Number(venusExpectancy - calc.planetAgeConvert("venus")).toFixed(1) + " more years.";
+  it('provides life expectancy for earth', function() {
+    let expectency = 76.3
+    let result = "Your life expectancy is " + Number(expectency - calc.planetAgeConvert("earth")).toFixed(1) + " more years.";
+    expect(calc.lifeExpectancy("earth")).toEqual(result);
+  });
+
+  it('provides life expectancy for mercury', function() {
+    let expectency = 76.3 / .24
+    let result = "Your life expectancy is " + Number(expectency - calc.planetAgeConvert("mercury")).toFixed(1) + " more years.";
+    expect(calc.lifeExpectancy("mercury")).toEqual(result);
+  });
+
+  it('provides life expectancy for venus', function() {
+    let expectency = 76.3 / .62
+    let result = "Your life expectancy is " + Number(expectency - calc.planetAgeConvert("venus")).toFixed(1) + " more years.";
     expect(calc.lifeExpectancy("venus")).toEqual(result);
+  });
+
+  it('provides life expectancy for mars', function() {
+    let expectency = 76.3 / 1.88
+    let result = "Your life expectancy is " + Number(expectency - calc.planetAgeConvert("mars")).toFixed(1) + " more years.";
+    expect(calc.lifeExpectancy("mars")).toEqual(result);
+  });
+
+  it('provides life expectancy for jupiter', function() {
+    let expectency = 76.3 / 11.86
+    let result = "Your life expectancy is " + Number(expectency - calc.planetAgeConvert("jupiter")).toFixed(1) + " more years.";
+    expect(calc.lifeExpectancy("jupiter")).toEqual(result);
   });
 
   it('tells user how many years theyve passed life expectancy if they have', function() {

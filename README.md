@@ -26,7 +26,7 @@
   * Output: (Venus): 79.31 Venus years left
 * Program should return the number of years the user has lived past life expectancy if they have already lived past it on that planet
   * Input: 1/1/1930 & female
-  * Output: Venus: 11.09 Venus years past life expectancy.
+  * Output: Venus: 11.6 Venus years past life expectancy.
 
 ## Setup and Installation
 * clone repository: git clone https://github.com/grepcats/galactic-age-calc
@@ -43,7 +43,7 @@
 From here, you should be able to enter your information and see results.
 
 ## Known Bugs
-No form validation on name or date.
+No known bugs.
 
 ## Support and Contact Details
 If there are any issues or questions, please contact me at kayla.renee at gmail dot com or create an issue in GitHub.
