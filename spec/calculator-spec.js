@@ -47,4 +47,10 @@ describe('Calculator', function() {
     let result = age / 60 / 60 / 24 / (365 * 11.86);
     expect(calc.jupiterConvert()).toEqual(result);
   });
+
+  it('provides life expectancy for user given planet', function() {
+    let venusExpectancy = 81.1 / .62
+    let result = venusExpectancy - calc.venusConvert();
+    expect(calc.lifeExpectancy("venus")).toEqual(result);
+  });
 });

@@ -1,3 +1,5 @@
+const earth = 365;
+
 export class Calculator {
   constructor(name, birthday) {
     this.name = name;
@@ -16,23 +18,33 @@ export class Calculator {
 
   mercuryConvert() {
     let age = this.compareDates();
-    return (age / 60 / 60 / 24 / (365 * .24));
+    return (age / 60 / 60 / 24 / (earth * .24));
   }
 
   venusConvert() {
     let age = this.compareDates();
-    return (age / 60 / 60 / 24 / (365 * .62));
+    return (age / 60 / 60 / 24 / (earth * .62));
   }
 
   marsConvert() {
     let age = this.compareDates();
-    return (age / 60 / 60 / 24 / (365 * 1.88));
+    return (age / 60 / 60 / 24 / (earth * 1.88));
   }
 
   jupiterConvert() {
     let age = this.compareDates();
-    return (age / 60 / 60 / 24 / (365 * 11.86));
+    return (age / 60 / 60 / 24 / (earth * 11.86));
   }
 
+  lifeExpectancy(planet) {
+    planet = planet.toLowerCase();
+    if (planet === "venus") {
+      let venusExpectancy = 81.1 / .62
+      return (venusExpectancy - this.venusConvert());
+
+    }
+
+
+  }
 
 }
