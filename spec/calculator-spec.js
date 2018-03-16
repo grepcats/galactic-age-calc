@@ -29,6 +29,6 @@ describe('Calculator', function() {
     calc.convertToSeconds();
     let age = calc.compareDates();
     let result = age / 60 / 60 / 24 / (365 * .24);
-    expect(calc.mercuryConvert().toEqual(result));
+    expect(calc.mercuryConvert()).toEqual(result);
   });
 });
