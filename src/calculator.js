@@ -20,6 +20,11 @@ export class Calculator {
     return (today - this.convertedBirthday);
   }
 
+  earthConvert() {
+    let age = this.compareDates();
+    return (age / 60 / 60 / 24 / earth);
+  }
+
   mercuryConvert() {
     let age = this.compareDates();
     return (age / 60 / 60 / 24 / (earth * .24));
@@ -48,6 +53,7 @@ export class Calculator {
 
     if (this.gender === "male") { earthExpectancy = 76.3; }
     else if (this.gender === "female") { earthExpectancy = 81.1; }
+    else if (this.gender === "undisc") { earthExpectancy = 78.7; }
 
     if (planet === "mercury") { planetExpectancy = earthExpectancy / .24; convertedPlanetAge = this.mercuryConvert(); }
     else if (planet === "venus") { planetExpectancy = earthExpectancy / .62; convertedPlanetAge = this.venusConvert(); }
@@ -55,13 +61,11 @@ export class Calculator {
     else if (planet === "jupiter") { planetExpectancy = earthExpectancy / 11.86; convertedPlanetAge = this.jupiterConvert(); }
 
     if (planetExpectancy > convertedPlanetAge) {
-      return (planetExpectancy - convertedPlanetAge);
+      return ("Your life expectancy is " + Number(planetExpectancy - convertedPlanetAge).toFixed(1) + " more years.");
     }
     else {
-      return (convertedPlanetAge - planetExpectancy);
+      return ("You've outlived your life expectancy by " + Number(convertedPlanetAge - planetExpectancy).toFixed(1) + " years.");
     }
-
-
   }
 
 }

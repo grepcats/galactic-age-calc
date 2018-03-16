@@ -30,6 +30,12 @@ describe('Calculator', function() {
     expect(calc.mercuryConvert()).toEqual(result);
   });
 
+  it('returns the users age in earth years', function() {
+    let age = calc.compareDates();
+    let result = age / 60 / 60 / 24 / 365;
+    expect(calc.earthConvert()).toEqual(result);
+  });
+
   it('returns the users age in venus years', function() {
     let age = calc.compareDates();
     let result = age / 60 / 60 / 24 / (365 * .62);
@@ -50,7 +56,7 @@ describe('Calculator', function() {
 
   it('provides life expectancy for user given planet', function() {
     let venusExpectancy = 76.3 / .62
-    let result = venusExpectancy - calc.venusConvert();
+    let result = "Your life expectancy is " + venusExpectancy - calc.venusConvert() + " more years.";
     expect(calc.lifeExpectancy("venus")).toEqual(result);
   });
 
@@ -59,7 +65,7 @@ describe('Calculator', function() {
     older.convertToSeconds();
     let venusExpectancy = 76.3 / .62
     let venusAge = older.venusConvert();
-    let result = venusAge - venusExpectancy;
+    let result = "You've outlived your life expectancy by " + venusAge - venusExpectancy + " years.";
 
     expect(older.lifeExpectancy("venus")).toEqual(result);
   });
