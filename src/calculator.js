@@ -11,8 +11,11 @@ export class Calculator {
 
   compareDates() {
     let today = Math.floor(Date.now() / 1000);
-    console.log(today - this.convertedBirthday);
     return (today - this.convertedBirthday);
+  }
+
+  mercuryConvert() {
+    
   }
 
 
