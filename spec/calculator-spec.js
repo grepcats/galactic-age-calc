@@ -13,6 +13,6 @@ describe('Calculator', function() {
     calc.convertToSeconds();
     let seconds = 514278000;
 
-    expect(calc.convertedBirthday.toEqual(seconds));
+    expect(calc.convertedBirthday).toEqual(seconds);
   });
 });

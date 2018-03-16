@@ -6,7 +6,7 @@ export class Calculator {
   }
 
   convertToSeconds() {
-    //converts birthday to seconds and sets it
+    this.convertedBirthday = Date.parse(this.birthday) / 1000;
   }
 
 
