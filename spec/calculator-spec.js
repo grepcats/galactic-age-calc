@@ -41,4 +41,10 @@ describe('Calculator', function() {
     let result = age / 60 / 60 / 24 / (365 * 1.88);
     expect(calc.marsConvert()).toEqual(result);
   });
+
+  it('returns the users age in jupiter years', function() {
+    let age = calc.compareDates();
+    let result = age / 60 / 60 / 24 / (365 * 11.86);
+    expect(calc.jupiterConvert()).toEqual(result);
+  });
 });

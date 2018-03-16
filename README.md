@@ -16,7 +16,7 @@ Super Galactic Age Calculator
 * Program should return the age of a person in Mars years (1.88 earth years)
   * Input: 4/19/1986
   * Output: 16.99 years old in Mars years
-* Program should return the age of a person in Jupiter years
+* Program should return the age of a person in Jupiter years (11.86 earth years)
   * Input: 4/19/1986
   * Output: 2.69 years old in Jupiter years
 * Program should determine how many years a person has left to live on each planet based on average life expectancy for their demographic. Demographic in this case is assumption that user lives in US and considers gender. In US Overall, 76.3 for males, 81.1 for females, overall 78.7

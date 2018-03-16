@@ -29,5 +29,10 @@ export class Calculator {
     return (age / 60 / 60 / 24 / (365 * 1.88));
   }
 
+  jupiterConvert() {
+    let age = this.compareDates();
+    return (age / 60 / 60 / 24 / (365 * 11.86));
+  }
+
 
 }
