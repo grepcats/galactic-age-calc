@@ -1,6 +1,9 @@
 const earth = 365;
 
 export class Calculator {
+
+  // const age = this.compareDates();
+
   constructor(name, birthday, gender) {
     this.name = name;
     this.birthday = birthday;
@@ -40,38 +43,24 @@ export class Calculator {
   lifeExpectancy(planet) {
     planet = planet.toLowerCase();
     let earthExpectancy;
+    let planetExpectancy;
+    let convertedPlanetAge;
 
     if (this.gender === "male") { earthExpectancy = 76.3; }
     else if (this.gender === "female") { earthExpectancy = 81.1; }
 
-    if (planet === "mercury") {
-      let mercuryExpectancy = earthExpectancy / .24;
-      return (mercuryExpectancy - this.mercuryConvert());
-    }
-    else if (planet === "venus") {
-      let venusExpectancy = earthExpectancy / .62;
-      // console.log("venus expectancy " + venusExpectancy);
-      // console.log("venus age " + this.venusConvert());
-      // console.log("name: " + this.name);
-      if (venusExpectancy > this.venusConvert()) {
-        return (venusExpectancy - this.venusConvert());
-      }
-      else {
-        return (this.venusConvert() - venusExpectancy);
-      }
+    if (planet === "mercury") { planetExpectancy = earthExpectancy / .24; convertedPlanetAge = this.mercuryConvert(); }
+    else if (planet === "venus") { planetExpectancy = earthExpectancy / .62; convertedPlanetAge = this.venusConvert(); }
+    else if (planet === "mars") { planetExpectancy = earthExpectancy / 1.88; convertedPlanetAge = this.marsConvert(); }
+    else if (planet === "jupiter") { planetExpectancy = earthExpectancy / 11.86; convertedPlanetAge = this.jupiterConvert(); }
 
-    }
-    else if (planet === "mars") {
-      let marsExpectancy = earthExpectancy / 1.88;
-      return (marsExpectancy - this.marsConvert());
-    }
-    else if (planet === "jupiter") {
-      let jupiterExpectancy = earthExpectancy / 11.86;
-      return (jupiterExpectancy - this.jupiterConvert());
+    if (planetExpectancy > convertedPlanetAge) {
+      return (planetExpectancy - convertedPlanetAge);
     }
     else {
-      return ("What")
+      return (convertedPlanetAge - planetExpectancy);
     }
+
 
   }
 

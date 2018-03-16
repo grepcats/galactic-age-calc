@@ -59,11 +59,7 @@ describe('Calculator', function() {
     older.convertToSeconds();
     let venusExpectancy = 76.3 / .62
     let venusAge = older.venusConvert();
-    console.log("his age on venus: " + venusAge);
-    console.log("his name: " + older.name);
-    // console.log("venus life expectancy: " + venusExpectancy);
     let result = venusAge - venusExpectancy;
-    console.log(result);
 
     expect(older.lifeExpectancy("venus")).toEqual(result);
   });
