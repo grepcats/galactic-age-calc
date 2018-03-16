@@ -21,7 +21,8 @@ describe('Calculator', function() {
 
   it('compares users age in seconds with current date in seconds', function() {
     let snapshot = Math.floor(Date.now() / 1000);
-    let difference = snapshot - this.convertedBirthday;
+    calc.convertToSeconds();
+    let difference = snapshot - calc.convertedBirthday;
     expect(calc.compareDates()).toEqual(difference);
 
   });
