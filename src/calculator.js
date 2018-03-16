@@ -9,5 +9,10 @@ export class Calculator {
     this.convertedBirthday = Date.parse(this.birthday) / 1000;
   }
 
+  compareDates() {
+    // let today = Date.now() / 1000;
+    // return (today - this.convertedBirthday);
+  }
+
 
 }
