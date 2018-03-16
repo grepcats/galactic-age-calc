@@ -4,7 +4,7 @@ describe('Calculator', function() {
   let calc;
 
   beforeEach(function() {
-    calc = new Calculator("Ben", "4/19/1986");
+    calc = new Calculator("Ben", "4/19/1986", "male");
     calc.convertToSeconds();
   });
 
@@ -49,8 +49,23 @@ describe('Calculator', function() {
   });
 
   it('provides life expectancy for user given planet', function() {
-    let venusExpectancy = 81.1 / .62
+    let venusExpectancy = 76.3 / .62
     let result = venusExpectancy - calc.venusConvert();
     expect(calc.lifeExpectancy("venus")).toEqual(result);
   });
+
+  it('tells user how many years theyve passed life expectancy if they have', function() {
+    let older = new Calculator("Bill", "1/1/1930", "male");
+    older.convertToSeconds();
+    let venusExpectancy = 76.3 / .62
+    let venusAge = older.venusConvert();
+    console.log("his age on venus: " + venusAge);
+    console.log("his name: " + older.name);
+    // console.log("venus life expectancy: " + venusExpectancy);
+    let result = venusAge - venusExpectancy;
+    console.log(result);
+
+    expect(older.lifeExpectancy("venus")).toEqual(result);
+  });
+
 });

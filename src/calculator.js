@@ -1,9 +1,10 @@
 const earth = 365;
 
 export class Calculator {
-  constructor(name, birthday) {
+  constructor(name, birthday, gender) {
     this.name = name;
     this.birthday = birthday;
+    this.gender = gender;
     this.convertedBirthday = new Date();
   }
 
@@ -38,12 +39,39 @@ export class Calculator {
 
   lifeExpectancy(planet) {
     planet = planet.toLowerCase();
-    if (planet === "venus") {
-      let venusExpectancy = 81.1 / .62
-      return (venusExpectancy - this.venusConvert());
+    let earthExpectancy;
+
+    if (this.gender === "male") { earthExpectancy = 76.3; }
+    else if (this.gender === "female") { earthExpectancy = 81.1; }
+
+    if (planet === "mercury") {
+      let mercuryExpectancy = earthExpectancy / .24;
+      return (mercuryExpectancy - this.mercuryConvert());
+    }
+    else if (planet === "venus") {
+      let venusExpectancy = earthExpectancy / .62;
+      // console.log("venus expectancy " + venusExpectancy);
+      // console.log("venus age " + this.venusConvert());
+      // console.log("name: " + this.name);
+      if (venusExpectancy > this.venusConvert()) {
+        return (venusExpectancy - this.venusConvert());
+      }
+      else {
+        return (this.venusConvert() - venusExpectancy);
+      }
 
     }
-
+    else if (planet === "mars") {
+      let marsExpectancy = earthExpectancy / 1.88;
+      return (marsExpectancy - this.marsConvert());
+    }
+    else if (planet === "jupiter") {
+      let jupiterExpectancy = earthExpectancy / 11.86;
+      return (jupiterExpectancy - this.jupiterConvert());
+    }
+    else {
+      return ("What")
+    }
 
   }
 
