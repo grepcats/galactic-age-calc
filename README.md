@@ -32,11 +32,13 @@
 * clone repository: git clone https://github.com/grepcats/galactic-age-calc
 * install node. if you are on a mac, use `brew install node`. Otherwise, go to https://nodejs.org/en/download/ and download/install the appropriate installer.
 * in the project directory, type
-`npm init`
-`npm install` (this installs the packages and dependencies listed in the package.json file)
-`./node_modules/.bin/jasmine init`
-`.npm install -g karma-cli` (you should only have to do this once on your machine)
-`karma init` (if you have trouble running this with git bash, try PowerShell or another command line terminal)
+```
+npm init
+npm install (this installs the packages and dependencies listed in the package.json file)
+./node_modules/.bin/jasmine init
+npm install -g karma-cli (you should only have to do this once on your machine)
+karma init (if you have trouble running this with git bash, try PowerShell or another command line terminal)
+```
 * to test, run `npm test`
 * to open the development server, run `npm start`
 
