@@ -35,9 +35,8 @@
 ```
 npm init
 npm install (this installs the packages and dependencies listed in the package.json file)
-./node_modules/.bin/jasmine init
 npm install -g karma-cli (you should only have to do this once on your machine)
-karma init (if you have trouble running this with git bash, try PowerShell or another command line terminal)
+
 ```
 * to test, run `npm test`
 * to open the development server, run `npm start`

@@ -19,7 +19,7 @@ describe('Calculator', function() {
   });
 
   it('converts users age to seconds', function() {
-    let seconds = 514278000;
+    let seconds = Date.parse(new Date(calc.birthday)) / 1000;
     expect(calc.convertedBirthday).toEqual(seconds);
   });
 
